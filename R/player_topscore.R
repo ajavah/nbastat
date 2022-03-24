@@ -7,6 +7,7 @@
 #' @examples
 #' player_topscore()
 player_topscore <- function(year) {
-  nbastat_year <- dplyr::filter(nbastat, Year == year)
-  return(dplyr::filter(nbastat_year, PTS == max(nbastat_year$PTS)))
+  nbastat_year <- dplyr::filter(nbastat, Year == year)    #Subset to year
+  output <- dplyr::filter(nbastat_year, PTS == max(nbastat_year$PTS)) #Get player with max points
+  return(output) #Return output
 }

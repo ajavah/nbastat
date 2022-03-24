@@ -8,7 +8,7 @@
 #' nba_numeric_correlation()
 #'
 nba_numeric_correlation <- function(year) {
-  nbastat_year <- dplyr::filter(nbastat, Year == year)
-  nbastat_year_numeric <- nbastat_year[,sapply(nbastat_year,is.numeric)]
-  return(cor(nbastat_year_numeric))
+  nbastat_year <- dplyr::filter(nbastat, Year == year)    #Subset to year
+  nbastat_year_numeric <- nbastat_year[,sapply(nbastat_year,is.numeric)]   #Use only numeric values
+  return(cor(nbastat_year_numeric)) #Return output
 }
